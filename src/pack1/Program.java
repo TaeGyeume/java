@@ -7,12 +7,11 @@ public class Program {
     public static void main(String[] args) {
 
         while ( true ) {
-            Scanner sc = new Scanner(System.in);
             // 예외처리
-            try {
+            try (Scanner sc = new Scanner(System.in)) {
                 System.out.print("정수를 입력하세요(x 입력시 종료) : ");
                 String strNumber = sc.nextLine();
-                if( strNumber.equals("x"))
+                if (strNumber.equals("x"))
                     break;
 
                 int number = Integer.parseInt(strNumber);// Integer.parseInt() 문자열 정수를 진짜 정수형 타입으로 변경
@@ -27,8 +26,6 @@ public class Program {
                 System.out.println("0이 아닌 정수를 입력하세야 합니다");
             } catch (Exception e) {
                 System.out.println("알 수 없는 에러가 발생하였습니다.");
-            } finally {
-                sc.close();
             }
         }
     }
