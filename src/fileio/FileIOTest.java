@@ -3,6 +3,7 @@ package fileio;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Optional;
 
 public class FileIOTest {
     public static void main(String[] args) {
@@ -28,5 +29,22 @@ public class FileIOTest {
         Person kang = new Person(20, "강호동", "1234-1234");
         Person yoo = new Person(21, "유재석", "1234-4567");
         Person park = new Person(22, "박명수", "1234-8910");
+
+        try {
+            ObjectIO.savePerson("kang.per", kang);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+
+        try {
+            Optional<Person> byPerson = ObjectIO.loadPerson("kang.per");
+            byPerson.orElseThrow(() -> new RuntimeException("객체를 정상적으로 로딩하지 못 했습니다."));
+            Person fileObject = byPerson.get();
+            System.out.println( fileObject );
+
+        } catch (IOException | ClassNotFoundException | RuntimeException e) {
+            System.out.println( e.getMessage() );
+        }
     }
 }
