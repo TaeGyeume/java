@@ -16,11 +16,17 @@ public class FileIOTest {
 //        sb.append("파일 쓰기 및 읽기 작업입니다.\n");
 //        TextIO.write("test.txt", sb.toString());
 
-        try {
-            StringBuilder sb = TextIO.read("test.txt");
-            System.out.println(sb.toString());
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
+//        try {
+//            StringBuilder sb = TextIO.read("test.txt");
+//            System.out.println(sb.toString());
+//        } catch (IOException e) {
+//            System.out.println(e.getMessage());
+//        }
+//
+//        BinaryIO.copy("test.txt", "copy.txt");
+
+        Person kang = new Person(20, "강호동", "1234-1234");
+        Person yoo = new Person(21, "유재석", "1234-4567");
+        Person park = new Person(22, "박명수", "1234-8910");
     }
 }
