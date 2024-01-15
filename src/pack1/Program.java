@@ -6,9 +6,11 @@ import java.util.Scanner;
 public class Program {
     public static void main(String[] args) {
 
+        Scanner sc = new Scanner(System.in);
+
         while ( true ) {
             // 예외처리
-            try (Scanner sc = new Scanner(System.in)) {
+            try {
                 System.out.print("정수를 입력하세요(x 입력시 종료) : ");
                 String strNumber = sc.nextLine();
                 if (strNumber.equals("x"))
@@ -28,5 +30,6 @@ public class Program {
                 System.out.println("알 수 없는 에러가 발생하였습니다.");
             }
         }
+        sc.close();
     }
 }
