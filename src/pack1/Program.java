@@ -21,15 +21,16 @@ public class Program {
                 int mok = 10 / number;
                 System.out.printf("10을 %d로 나눈 결과 : %d\n", number, mok);
             } catch (ArithmeticException e) {
-                System.out.println("0으로 나눌 수 없습니다.");
+                System.out.println("0으로 나눌수 없습니다.");
             } catch (NoSuchElementException e) {
                 System.out.println("키보드 입력 오류가 발생했습니다.");
             } catch (NumberFormatException e) {
-                System.out.println("0이 아닌 정수를 입력하세야 합니다");
+                System.out.println("0이 아닌 정수를 입력하셔야 합니다");
             } catch (Exception e) {
-                System.out.println("알 수 없는 에러가 발생하였습니다.");
+                System.out.println("알 수 없는 에러가 발생했습니다.");
             }
         }
+
         sc.close();
     }
 }

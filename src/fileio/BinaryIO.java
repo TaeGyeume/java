@@ -12,7 +12,7 @@ public class BinaryIO {
         try(FileInputStream fis = new FileInputStream(original);
             FileOutputStream fos = new FileOutputStream(dest)) {
             int readBytes;
-            while ( (readBytes = fis.read(buffer)) != -1 ) {
+            while( (readBytes = fis.read(buffer)) != -1 ) {
                 //
                 fos.write(buffer, 0, readBytes);
             }

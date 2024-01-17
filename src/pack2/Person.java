@@ -13,9 +13,9 @@ public class Person {
         System.out.printf("%s의 나이는 %d살입니다\n", name, age);
     }
 
-    public void setAge (int age) throws MyAgeException {
+    public void setAge(int age) throws MyAgeException {
         if (age < 0)
-            throw new MyAgeException("나이는 0보다 작을 수 없습니다");
+            throw new MyAgeException("나이는 0보다 작을 수 없습니다.");
 
         this.age = age;
     }

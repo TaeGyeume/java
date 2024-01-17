@@ -1,6 +1,7 @@
 package fileio;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 public class Person implements Serializable {
     private int age;
@@ -19,12 +20,16 @@ public class Person implements Serializable {
         this.tel = tel;
     }
 
+    public void someOperate(Consumer<Person> obj) {
+
+    }
+
     @Override
     public String toString() {
         return "Person{" +
-                "age = " + age +
-                ", name = '" + name + '\'' +
-                ", tel = '" + tel + '\'' +
+                "age=" + age +
+                ", name='" + name + '\'' +
+                ", tel='" + tel + '\'' +
                 '}';
     }
 }

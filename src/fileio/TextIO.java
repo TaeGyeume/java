@@ -7,8 +7,8 @@ import java.io.IOException;
 
 public class TextIO {
 
-    public static void write(String filename, String text) {
-        File file = new File(filename);
+    public static void write(String fileName, String text) {
+        File file = new File(fileName);
         try (FileWriter fWriter = new FileWriter(file)) {
             fWriter.write(text);
         } catch (IOException e) {
@@ -20,7 +20,7 @@ public class TextIO {
     public static StringBuilder read(String fileName) throws IOException {
         File file = new File(fileName);
         StringBuilder sb = new StringBuilder();
-        try (FileReader fReader = new FileReader(file)) {
+        try(FileReader fReader = new FileReader(file)) {
             // fReader.read(); // 한 글자씩 읽음
             char[] buffer = new char[128];
             int readBytes;
@@ -31,7 +31,7 @@ public class TextIO {
         } catch (IOException e) {
             throw e;
         }
+
         return sb;
     }
-
 }
